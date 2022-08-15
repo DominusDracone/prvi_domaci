@@ -1,4 +1,7 @@
-
+body{
+    background-image: url("slike/pozadinaListaNova.jpg");
+    background-size: cover;
+    }
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
