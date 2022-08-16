@@ -9,8 +9,12 @@ body {
   padding-top: 40px;
   padding-bottom: 40px;
   background-color: #f5f5f5;
-  background-image: url("slike/pozadina.jpg");
+  background-image: url("../slike/pozadinaForma.jpg");
   background-size: cover;
+}
+
+.fieldset-1 {
+        background-color: #EBEBEB;
 }
 
 .form-signin {
