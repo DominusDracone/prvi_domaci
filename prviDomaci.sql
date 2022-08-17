@@ -59,6 +59,18 @@ INSERT INTO `user` (`id`, `username`, `password`) VALUES
 (1, 'admin', 'admin');
 
 --
+-----------create and fill table for img
+DROP TABLE IF EXISTS `slike`;
+CREATE TABLE `slike` (
+  `id` INT(11) NOT NULL,
+  `imeslike` VARCHAR(255) NOT NULL
+) ENGINE=INNODB DEFAULT CHARSET=utf8mb4;
+
+
+INSERT INTO `slike` (`id`, `imeslike`) VALUES
+(1, 'MilicaS'),
+(2, 'IsidoraS'),
+(3, 'MarijaS');
 
 
 
@@ -94,3 +106,5 @@ ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
+ALTER TABLE `slike`
+  ADD PRIMARY KEY (`id`);
