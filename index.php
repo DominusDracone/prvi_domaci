@@ -1,3 +1,39 @@
+<?php
+
+require "dbBroker.php";
+require "model/user.php";
+
+session_start();
+if(isset($_POST['username']) && isset($_POST['password'])){
+    $uname = $_POST['username'];
+    $upass = $_POST['password'];
+
+    // $conn = new mysqli() /// pregazena konekcija iz dbBrokera;
+    $korisnik = new User(1, $uname, $upass);
+    // $odg = $korisnik->logInUser($uname, $upass, $conn);
+    $odg = User::logInUser($korisnik, $conn); //pristup statickim funkcijama preko klase
+
+    if($odg->num_rows==1){
+        echo  `
+        <script>
+        console.log( "Uspešno ste se prijavili");
+        </script>
+        `;
+        $_SESSION['user_id'] = $korisnik->id;
+        header('Location: lista.php');
+        exit();
+    }else{
+        echo `
+        <script>
+        console.log( "Niste se prijavili!");
+        </script>
+        `;
+    }
+
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,24 +46,17 @@
   <body class="text-center">
     
     <main class="form-signin w-100 m-auto">
-      <form>
+      <form method="POST" action="#">
         
         <h1 class="h3 mb-3 fw-normal">Ulogujte se</h1>
-    
         <div class="form-floating">
-          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-          <label for="floatingInput">Email</label>
+          <input type="text" class="form-control" id="floatingInput" placeholder="Username" name="username">
+          <label for="floatingInput">Username</label>
         </div>
         <div class="form-floating">
-          <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+          <input type="password" class="form-control" id="floatingPassword" name= "password" placeholder="Password">
           <label for="floatingPassword">Šifra</label>
-        </div>
-    
-        <div class="checkbox mb-3">
-          <label>
-            <input type="checkbox" value="remember-me"> Zapamti korisnika
-          </label>
-        </div>
+        </div>   
         <button class="w-100 btn btn-lg btn-primary" type="submit">Prijavi se</button>
       </form>
     </main>
