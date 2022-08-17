@@ -17,8 +17,8 @@
         <h1 class="fw-light">Dobrodosli nazad!</h1>
         <p class="lead text-muted"> Šta biste želeli danas?</p>
         <p>
-          <a href="#" class="btn btn-primary my-2">Dodaj novog partnera</a>
-          <a href="#" class="btn btn-secondary my-2">Pogledaj kalendar</a>
+          <a href="forma.php" class="btn btn-primary my-2">Dodaj novog partnera</a>
+          <a href="kalendar.php" class="btn btn-secondary my-2">Pogledaj kalendar</a>
         </p>
       </div>
     </div>

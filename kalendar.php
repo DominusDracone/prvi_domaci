@@ -108,8 +108,9 @@
                 </div>
 
                 <div class="addEventButtons">
-                  <a class="waves-effect waves-light btn blue lighten-2" id="addEventButton">Add</a>
-                  <a class="waves-effect waves-light btn grey lighten-2" id="cancelAdd">Cancel</a>
+                  <a class="waves-effect waves-light btn blue lighten-2" id="addEventButton">Dodaj</a>
+                  <a class="waves-effect waves-light btn grey lighten-2" id="cancelAdd">Poništi</a>
+                  <a href="lista.php" class="waves-effect waves-light btn blue lighten-2" id="goBackButton">Vrati se nazad</a>
                 </div>
 
               </div>
