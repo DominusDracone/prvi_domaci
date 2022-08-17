@@ -7,7 +7,6 @@ class Prijava{
     public $pol;
     public $status;
     public $rodjendan;
-    public $imeSlike;
     
     public function __construct($id=null, $ime=null, $prezime=null, $godine=null, $pol=null, $statu=null, $rodjendan=null, $imeSlike=null)
     {
@@ -18,7 +17,6 @@ class Prijava{
         $this->pol = $status;
         $this->status = $godine;
         $this->rodjendan = $rodjendan;
-        $this->imeSlike = $imeSlike;
     }
 
     #funkcija prikazi sve getAll
@@ -29,11 +27,7 @@ class Prijava{
         return $conn->query($query);
     }
 
-    public static function getAllSlike(mysqli $conn)
-    {
-        $query = "SELECT * FROM slike";
-        return $conn->query($query);
-    }
+    
 
     #funkcija getById
 
@@ -51,6 +45,44 @@ class Prijava{
 
     }
 
+    
+
+    #deleteById
+
+    public function deleteByIdPrijava(mysqli $conn)
+    {
+        $query = "DELETE FROM prijave WHERE id=$this->id";
+        return $conn->query($query);
+    }
+   
+
+    #update
+    
+
+    #insert add
+    public static function addPrijava(Prijava $prijava, mysqli $conn)
+    {
+        $query = "INSERT INTO prijave(ime, prezime, godine, pol, status, rodjendan) VALUES('$ime->ime','$prezime->prezime','$godine->godine','$pol->pol','$status->status','$rodjendan->rodjendan')";
+        return $conn->query($query);
+    }
+    
+}
+
+class PrijavaS{
+    public $id;
+    public $imeSlike;
+
+    public function __construct($id, $imeSlike){
+        $this ->id = $id;
+        $this ->imeSlike = $imeSlike;
+    }
+
+    public static function getAllSlike(mysqli $conn)
+    {
+        $query = "SELECT * FROM slike";
+        return $conn->query($query);
+    }
+
     public static function getByIdSlike($id, mysqli $conn){
         $query = "SELECT * FROM slike WHERE id=$id";
 
@@ -64,21 +96,6 @@ class Prijava{
         return $myObj;
 
     }
-
-    #deleteById
-
-    public function deleteByIdPrijava(mysqli $conn)
-    {
-        $query = "DELETE FROM prijave WHERE id=$this->id";
-        return $conn->query($query);
-    }
-    public function deleteByIdSlike(mysqli $conn)
-    {
-        $query = "DELETE FROM slike WHERE id=$this->id";
-        return $conn->query($query);
-    }
-
-    #update
     public function updatePrijava($id, mysqli $conn)
     {
         $query = "UPDATE prijave set ime = $this->ime, prezime = $this->prezime, godine = $this->godine, pol = $this-$>pol, status = $this-$>status, rodjendan = $this-$>rodjendan WHERE id=$id";
@@ -90,12 +107,12 @@ class Prijava{
         return $conn->query($query);
     }
 
-    #insert add
-    public static function addPrijava(Prijava $prijava, mysqli $conn)
+    public function deleteByIdSlike(mysqli $conn)
     {
-        $query = "INSERT INTO prijave(ime, prezime, godine, pol, status, rodjendan) VALUES('$ime->ime','$prezime->prezime','$godine->godine','$pol->pol','$status->status','$rodjendan->rodjendan')";
+        $query = "DELETE FROM slike WHERE id=$this->id";
         return $conn->query($query);
     }
+    
     public static function addSlike(Prijava $prijava, mysqli $conn)
     {
         $query = "INSERT INTO slike(imeSlike) VALUES('$imeSlike->imeSlike')";

@@ -1,3 +1,31 @@
+<?php
+
+require "dbBroker.php";
+require "model/prijava.php";
+
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header('Location: index.php');
+    exit();
+}
+
+$podaci = Prijava::getAllPrijava($conn);
+$podaciS = PrijavaS::getAllSlike($conn);
+if (!$podaci) {
+    echo "Nastala je greška pri preuzimanju podataka";
+    die();
+}
+if (!$podaciS) {
+  echo "Nastala je greška pri preuzimanju podataka";
+  die();
+}
+if ($podaci->num_rows == 0 || $podaciS->num_rows == 0) {
+    echo "Nema novih partnera";
+    die();
+} 
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -23,20 +51,25 @@
       </div>
     </div>
   </section>
-
+  <table>
+    <tr>
+  <?php 
+    while ($red = $podaci->fetch_array()) :
+      $redS = PrijavaS::getByIdSlike($red["id"], $conn);
+  ?>
+  
   
     <div class="container">
 
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         <div class="col">
           <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">ImeOsobe </text></svg>
-
+           <a href="profil.php"> <img src="slikePartnera/IsidoraS.jfif" alt="greska"><?php echo $red['ime']?></img></a>
             <div class="card-body">
-              <p class="card-text">opisOsobe</p>
+              <p class="card-text"><?php echo $red["status"]; ?></p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Zakazi sastanak</button>
+                  <a href="kalendar.php"><button type="button" class="btn btn-sm btn-outline-secondary">Zakazi sastanak</button></a>
                   <button type="button" class="btn btn-sm btn-outline-secondary">Ukloni osobu</button>
                 </div>
                 <small class="text-muted"></small>
@@ -44,6 +77,13 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+    
+    
+    <?php endwhile;?>
+    </tr>
+  </table>
 
         
        
