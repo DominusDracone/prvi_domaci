@@ -15,19 +15,20 @@
         <h1 class="h3 mb-3 fw-normal">Ko će nam se pridružiti?</h1>
     
         <div class="fieldset-1">
+        <form action="#" method="post" id="formaForm">
             <label for="Slika">Slika</label>
             <input type="image" src="" alt="Submit" width="48" height="48">
         </div>
         <div class="form-floating">
-          <input type="text" class="form-control" id="ime" placeholder="Ime">
+          <input type="text" class="form-control" id="ime" placeholder="Ime" name="ime" value="">
           <label for="Ime">Ime</label>
         </div>
         <div class="form-floating">
-          <input type="text" class="form-control" id="prezime" placeholder="Prezime">
+          <input type="text" class="form-control" id="prezime" placeholder="Prezime" name="prezime" value="">
           <label for="Prezime">Prezime</label>
         </div>
         <div class="form-floating">
-          <input type="number" class="form-control" id="godine" placeholder="Godine">
+          <input type="number" class="form-control" id="godine" placeholder="Godine" name="godine" value="">
           <label for="Godine">Godine</label>
         </div>
         
@@ -35,7 +36,7 @@
             <legend>Pol:</legend>
 
                 <div>
-                    <input type="radio" id="musko" name="pol" value="musko" checked>
+                    <input type="radio" id="musko" name="pol" value="musko" checked >
                     <label for="huey">Muško</label>
                 </div>
                 <div>
@@ -67,11 +68,14 @@
              <label for="start">Rođendan:</label>
             <input type="date" id="rodjendan" name="rodjendan" value="2018-07-22" min="2018-01-01" max="2018-12-31">
         </div>
-        
+  </form>
        
-        <button class="w-100 btn btn-lg btn-primary" type="submit">Zapamti</button>
+        <button class="w-100 btn btn-lg btn-primary" type="submit" id="btn-obrisi">Zapamti</button>
+        <a href="lista.php"><button class="w-100 btn btn-lg btn-primary" type="submit">Nazad</button></a>
       </form>
     </main>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
   </body>
 </html>

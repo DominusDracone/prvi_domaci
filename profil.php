@@ -13,21 +13,21 @@
       <form>
         
         <h1 class="h3 mb-3 fw-normal">Šta želiš od mene?</h1>
-    
+        <form action="#" method="post" id="profilForm">
         <div class="fieldset-1">
             <label for="Slika">Slika</label>
             <input type="image" src="" alt="Submit" width="48" height="48">
         </div>
         <div class="form-floating">
-          <input type="text" class="form-control" id="ime" placeholder="Ime">
+          <input type="text" class="form-control" id="ime" placeholder="Ime" name="ime" value="">
           <label for="Ime">Ime</label>
         </div>
         <div class="form-floating">
-          <input type="text" class="form-control" id="prezime" placeholder="Prezime">
+          <input type="text" class="form-control" id="prezime" placeholder="Prezime" name="prezime" value="">
           <label for="Prezime">Prezime</label>
         </div>
         <div class="form-floating">
-          <input type="number" class="form-control" id="godine" placeholder="Godine">
+          <input type="number" class="form-control" id="godine" placeholder="Godine" name="godine" value="">
           <label for="Godine">Godine</label>
         </div>
         
@@ -67,7 +67,7 @@
              <label for="start">Rođendan:</label>
             <input type="date" id="rodjendan" name="rodjendan" value="2018-07-22" min="2018-01-01" max="2018-12-31">
         </div>
-        
+        </form>
        
         <button class="w-100 btn btn-lg btn-primary" type="submit">Zakaži sastanak</button>
         <button class="w-100 btn btn-lg btn-primary btnIzb " type="submit">Obriši</button>
