@@ -18,54 +18,22 @@
             <label for="Slika">Slika</label>
             <input type="image" src="" alt="Submit" width="48" height="48">
         </div>
-        <div class="form-floating">
-          <input type="text" class="form-control" id="ime" placeholder="Ime" name="ime" value="">
-          <label for="Ime">Ime</label>
-        </div>
-        <div class="form-floating">
-          <input type="text" class="form-control" id="prezime" placeholder="Prezime" name="prezime" value="">
-          <label for="Prezime">Prezime</label>
-        </div>
-        <div class="form-floating">
-          <input type="number" class="form-control" id="godine" placeholder="Godine" name="godine" value="">
-          <label for="Godine">Godine</label>
-        </div>
-        
-        <fieldset class="fieldset-1">
-            <legend>Pol:</legend>
-
-                <div>
-                    <input type="radio" id="musko" name="pol" value="musko" checked>
-                    <label for="huey">Muško</label>
-                </div>
-                <div>
-                    <input type="radio" id="zensko" name="pol" value="zensko" unchecked>
-                    <label for="huey">Žensko</label>
-                </div>
-        </fieldset>
-        <fieldset class="fieldset-1">
-            <legend>Status:</legend>
-
-                <div>
-                    <input type="radio" id="Muž/Žena" name="status" value="Muž/Žena" checked>
-                    <label for="huey">Muž/Žena</label>
-                </div>
-                <div>
-                    <input type="radio" id="Ljubanik/Ljubavnica" name="status" value="Ljubanik/Ljubavnica" unchecked>
-                    <label for="huey">Ljubanik/Ljubavnica</label>
-                </div>
-                <div>
-                    <input type="radio" id="FWB" name="status" value="FWB" unchecked>
-                    <label for="huey">FWB</label>
-                </div>
-                <div>
-                    <input type="radio" id="Povremena zabava" name="status" value="Povremena zabava" unchecked>
-                    <label for="huey">Povremena zabava</label>
-                </div>
-        </fieldset>
         <div class="fieldset-1">
-             <label for="start">Rođendan:</label>
-            <input type="date" id="rodjendan" name="rodjendan" value="2018-07-22" min="2018-01-01" max="2018-12-31">
+          <div>
+            <label for="ime">Ime</label>
+          </div>
+          <div>
+           <label for="prezime">Prezime</label>
+          </div>
+          <div>
+            <label for="godine">Godine</label>
+          </div>
+         <div>
+            <label for="pol">Pol</label>
+          </div>
+          <div>
+            <label for="status">Status</label>
+          </div>
         </div>
         </form>
        

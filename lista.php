@@ -54,8 +54,9 @@ if ($podaci->num_rows == 0 || $podaciS->num_rows == 0) {
   <table>
     <tr>
   <?php 
-    while ($red = $podaci->fetch_array() && $redS = $podaciS->fetch_array()) :
-      $slika = "slikePartnera/".$red['imeslike']."jfif";
+    while ($red = $podaci->fetch_array()) :
+      $pom = PrijavaS::getByIdSlike($red['id'], $conn);
+      #$slika = "slikePartnera/".$pom['0']."jfif";
   ?>
   
   
@@ -64,7 +65,7 @@ if ($podaci->num_rows == 0 || $podaciS->num_rows == 0) {
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         <div class="col">
           <div class="card shadow-sm">
-           <a href="profil.php"> <img src="<?php $slika?>" alt="greska"><?php echo $red['ime']?></img></a>
+           <a href="profil.php"> <img src="slikePartnera/IsidoraS.jfif"> alt="greska"><?php echo $red['ime']?></img></a>
             <div class="card-body">
               <p class="card-text"><?php echo $red["status"]; ?></p>
               <div class="d-flex justify-content-between align-items-center">
