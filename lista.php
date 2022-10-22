@@ -61,13 +61,14 @@ if ($podaci->num_rows == 0 || $podaciS->num_rows == 0) {
   
   
     <div class="container">
-
+    <form method="post" action="profil.php">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         <div class="col">
           <div class="card shadow-sm">
-           <a href="profil.php"> <img src="slikePartnera/IsidoraS.jfif"> alt="greska"><?php echo $red['ime']?></img></a>
+           <button type="submit"> <img src="slikePartnera/IsidoraS.jfif"> </img></button>
+           <label name = "ime"><?php echo $red['ime']?></label>
             <div class="card-body">
-              <p class="card-text"><?php echo $red["status"]; ?></p>
+              <p class="card-text"><label name = "status"><?php echo $red['status']?></label></p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <a href="kalendar.php"><button type="button" class="btn btn-sm btn-outline-secondary">Zakazi sastanak</button></a>
@@ -79,6 +80,7 @@ if ($podaci->num_rows == 0 || $podaciS->num_rows == 0) {
           </div>
         </div>
       </div>
+    </form>
     </div>
     
     

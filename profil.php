@@ -1,3 +1,11 @@
+<?php
+  $ime = $red['ime'];
+  $prezime;
+  $godine;
+  $pol;
+  $status = $_POST['status'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -20,19 +28,19 @@
         </div>
         <div class="fieldset-1">
           <div>
-            <label for="ime">Ime</label>
+            <label for="ime"><?php echo $ime ?></label>
           </div>
           <div>
-           <label for="prezime">Prezime</label>
+           <label for="prezime"><?php echo $prezime ?></label>
           </div>
           <div>
-            <label for="godine">Godine</label>
+            <label for="godine"><?php echo $godine ?></label>
           </div>
          <div>
-            <label for="pol">Pol</label>
+            <label for="pol"><?php echo $pol ?></label>
           </div>
           <div>
-            <label for="status">Status</label>
+            <label for="status"><?php echo $status ?></label>
           </div>
         </div>
         </form>
