@@ -1,4 +1,10 @@
 <?php
+  
+  // require 'lista.php';
+  // isset($_SESSION['ljubavnikID'])) == 1 {
+    //ljubancik = new Prijava('ljubabnikID');
+    // fetch_array(1)
+  //}
   $ime = $red['ime'];
   $prezime;
   $godine;
