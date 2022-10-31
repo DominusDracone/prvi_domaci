@@ -1,15 +1,20 @@
 <?php
-  
+  require "model/prijava.php";
+  require "dbBroker.php";
   // require 'lista.php';
   // isset($_SESSION['ljubavnikID'])) == 1 {
     //ljubancik = new Prijava('ljubabnikID');
     // fetch_array(1)
-  //}
-  $ime = $red['ime'];
-  $prezime;
-  $godine;
-  $pol;
-  $status = $_POST['status'];
+  //}  
+    $podaci = Prijava::getByIdPrijava($_POST['ljubavnikId'], $conn);
+    //print_r($podaci); 
+    $pom = PrijavaS::getByIdSlike($_POST['ljubavnikId'], $conn);
+    $slika = "slikePartnera/{$pom[0]['imeslike']}.jfif";
+    $ime = $podaci[0]['ime'];
+    $prezime = $podaci[0]['prezime'];
+    $godine = $podaci[0]['godine'];
+    $pol = $podaci[0]['pol'];
+    $status = $podaci[0]['status'];
 ?>
 
 <!DOCTYPE html>
@@ -29,8 +34,7 @@
         <h1 class="h3 mb-3 fw-normal">Šta želiš od mene?</h1>
         <form action="#" method="post" id="profilForm">
         <div class="fieldset-1">
-            <label for="Slika">Slika</label>
-            <input type="image" src="" alt="Submit" width="48" height="48">
+            <img src="<?php echo $slika?>" width="200" height="200">
         </div>
         <div class="fieldset-1">
           <div>

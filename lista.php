@@ -70,9 +70,12 @@ if ($podaci->num_rows == 0 || $podaciS->num_rows == 0) {
         <div class="col">
           <div class="card shadow-sm">
            <button type="submit"> <img src="<?php echo $slika?>"> </img></button>
+
            <!-- input:hidden -->
            <!-- sacuvala sesiju ID korisnika i na taj nacin pamtis sta je korisnik izabrao -->
-           
+           <!--  $_SESSION['ljubavnikID'] = $red['id'] -->
+
+           <input type="hidden" id="ljubavnikId" name="ljubavnikId" value="<?php echo $red['id']?>">
            <label name = "ime"><?php echo $red['ime']?></label>
             <div class="card-body">
               <p class="card-text"><label name = "status"><?php echo $red['status']?></label></p>
