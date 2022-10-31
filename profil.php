@@ -55,10 +55,10 @@
         </div>
         </form>
        
-        <button class="w-100 btn btn-lg btn-primary" type="submit">Zakaži sastanak</button>
+        <a href="kalendar.php"><button class="w-100 btn btn-lg btn-primary" type="submit">Zakaži sastanak</button></a>
         <button class="w-100 btn btn-lg btn-primary btnIzb " type="submit">Obriši</button>
         <button class="w-100 btn btn-lg btn-primary" type="submit">Izmeni</button>
-        <button class="w-100 btn btn-lg btn-primary btnNazad" type="submit">Nazad</button>
+        <a href="lista.php"><button class="w-100 btn btn-lg btn-primary btnNazad">Nazad</button></a>
         
       </form>
     </main>
