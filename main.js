@@ -1,25 +1,30 @@
-$('#btn-obrisi').click(function(){
-    console.log("Brisanje");
+$('#dodajForm').submit(function(){
+    event.preventDefault();
+    console.log("Dodavanje");
+    const $form =$(this);
+    const $input = $form.find('input, select, button, textarea');
 
-    const checked = $('input[name=checked-donut]:checked');
+    const serijalizacija = $form.serialize();
+    console.log(serijalizacija);
+
+    $input.prop('disabled', true);
 
     req = $.ajax({
-        url: 'handler/delete.php',
+        url: 'handler/add.php',
         type:'post',
-        data: {'id':checked.val()}
+        data: serijalizacija
     });
 
     req.done(function(res, textStatus, jqXHR){
         if(res=="Success"){
-           checked.closest('tr').remove();
-           alert('Obrisan kolokvijum');
-           console.log('Obrisan');
-        }else {
-        console.log("Kolokvijum nije obrisan "+res);
-        alert("Kolokvijum nije obrisan ");
-
-        }
+            alert("Osoba je dodata");
+            console.log("Dodata osoba");
+            location.reload(true);
+        }else console.log("Osoba nije dodata "+res);
         console.log(res);
     });
 
+    req.fail(function(jqXHR, textStatus, errorThrown){
+        console.error('Sledeca greska se desila> '+textStatus, errorThrown)
+    });
 });
