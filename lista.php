@@ -78,7 +78,7 @@ if ($podaci->num_rows == 0 || $podaciS->num_rows == 0) {
            <input type="hidden" id="ljubavnikId" name="ljubavnikId" value="<?php echo $red['id']?>">
            <label name = "ime"><?php echo $red['ime']?></label>
             <div class="card-body">
-              <p class="card-text"><label name = "status"><?php echo $red['status']?></label></p>
+              <p class="card-text"><label name = "ljstatus"><?php echo $red['ljstatus']?></label></p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <a href="kalendar.php"><button type="button" class="btn btn-sm btn-outline-secondary">Zakazi sastanak</button></a>

@@ -2,10 +2,12 @@ $('#dodajForm').submit(function(){
     event.preventDefault();
     console.log("Dodavanje");
     const $form =$(this);
-    const $input = $form.find('input, select, button, textarea');
+    const $input = $form.find('input, button');
 
     const serijalizacija = $form.serialize();
     console.log(serijalizacija);
+
+
 
     $input.prop('disabled', true);
 
@@ -16,7 +18,7 @@ $('#dodajForm').submit(function(){
     });
 
     req.done(function(res, textStatus, jqXHR){
-        if(res=="Success"){
+        if(res=='Success'){
             alert("Osoba je dodata");
             console.log("Dodata osoba");
             location.reload(true);

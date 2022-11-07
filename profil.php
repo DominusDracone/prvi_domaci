@@ -14,7 +14,7 @@
     $prezime = $podaci[0]['prezime'];
     $godine = $podaci[0]['godine'];
     $pol = $podaci[0]['pol'];
-    $status = $podaci[0]['status'];
+    $ljstatus = $podaci[0]['ljstatus'];
 ?>
 
 <!DOCTYPE html>
@@ -50,7 +50,7 @@
             <label for="pol"><?php echo $pol ?></label>
           </div>
           <div>
-            <label for="status"><?php echo $status ?></label>
+            <label for="ljstatus"><?php echo $ljstatus ?></label>
           </div>
         </div>
         </form>

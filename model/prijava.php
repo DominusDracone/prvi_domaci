@@ -5,17 +5,17 @@ class Prijava{
     public $prezime;   
     public $godine;   
     public $pol;
-    public $status;
+    public $ljstatus;
     public $rodjendan;
     
-    public function __construct($id=null, $ime=null, $prezime=null, $godine=null, $pol=null, $statu=null, $rodjendan=null, $imeSlike=null)
-    {
+    public function __construct($id=null, $ime=null, $prezime=null, $godine=null, $pol=null, $ljstatus=null, $rodjendan=null)
+    {   //echo 'OVO';
         $this->id = $id;
         $this->ime = $ime;
         $this->prezime = $prezime;
-        $this->godine = $pol;
-        $this->pol = $status;
-        $this->status = $godine;
+        $this->godine = $godine;
+        $this->pol = $pol;
+        $this->ljstatus = $ljstatus;
         $this->rodjendan = $rodjendan;
     }
 
@@ -61,11 +61,17 @@ class Prijava{
 
     #insert add
     public static function addPrijava(Prijava $prijava, mysqli $conn)
-    {
-        $query = "INSERT INTO prijave(ime, prezime, godine, pol, status, rodjendan) VALUES('$ime->ime','$prezime->prezime','$godine->godine','$pol->pol','$status->status','$rodjendan->rodjendan')";
+    {   
+        $query = "INSERT INTO prijave (ime, prezime, godine, pol, ljstatus, datumRodj) VALUES('$prijava->ime','$prijava->prezime','$prijava->godine','$prijava->pol','$prijava->ljstatus','$prijava->rodjendan')";
+        //echo 'Greska u addPrijava11';
         return $conn->query($query);
     }
     
+    public function updatePrijava($id, mysqli $conn)
+    {
+        $query = "UPDATE prijave set ime = $this->ime, prezime = $this->prezime, godine = $this->godine, pol = $this-$>pol, ljstatus = $this-$>ljstatus, datumRodj = $this-$>rodjendan WHERE id=$id";
+        return $conn->query($query);
+    }
 }
 
 class PrijavaS{
@@ -96,11 +102,7 @@ class PrijavaS{
         return $myObj;
 
     }
-    public function updatePrijava($id, mysqli $conn)
-    {
-        $query = "UPDATE prijave set ime = $this->ime, prezime = $this->prezime, godine = $this->godine, pol = $this-$>pol, status = $this-$>status, rodjendan = $this-$>rodjendan WHERE id=$id";
-        return $conn->query($query);
-    }
+    
     public function updateSlike($id, mysqli $conn)
     {
         $query = "UPDATE slike set imeSlike = $this->imeSlike";
@@ -121,3 +123,4 @@ class PrijavaS{
 }
 
 ?>
+INSERT INTO prijave (ime, prezime, godine, pol, ljstatus, datumRodj) VALUES('Pera','Peric','11','ženski','FWB','2018-07-22')
