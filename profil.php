@@ -10,6 +10,7 @@
     //print_r($podaci); 
     $pom = PrijavaS::getByIdSlike($_POST['ljubavnikId'], $conn);
     $slika = "slikePartnera/{$pom[0]['imeslike']}.jfif";
+    $id = $_POST['ljubavnikId'];
     $ime = $podaci[0]['ime'];
     $prezime = $podaci[0]['prezime'];
     $godine = $podaci[0]['godine'];
