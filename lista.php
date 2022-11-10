@@ -34,7 +34,8 @@ if ($podaci->num_rows == 0 || $podaciS->num_rows == 0) {
     <title>Lista</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styleLista.css">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="main.js"></script>
 
 
 <main>
@@ -82,7 +83,7 @@ if ($podaci->num_rows == 0 || $podaciS->num_rows == 0) {
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <a href="kalendar.php"><button type="button" class="btn btn-sm btn-outline-secondary">Zakazi sastanak</button></a>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Ukloni osobu</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary" onclick="obrisi(<?php echo $red['id']?>)">Ukloni osobu</button>
                 </div>
                 <small class="text-muted"></small>
               </div>
