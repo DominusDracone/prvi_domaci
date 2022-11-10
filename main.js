@@ -30,3 +30,4 @@ $('#dodajForm').submit(function(){
         console.error('Sledeca greska se desila> '+textStatus, errorThrown)
     });
 });
+

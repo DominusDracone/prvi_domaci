@@ -9,7 +9,7 @@ class Prijava{
     public $rodjendan;
     
     public function __construct($id=null, $ime=null, $prezime=null, $godine=null, $pol=null, $ljstatus=null, $rodjendan=null)
-    {   //echo 'OVO';
+    {   
         $this->id = $id;
         $this->ime = $ime;
         $this->prezime = $prezime;
@@ -123,4 +123,3 @@ class PrijavaS{
 }
 
 ?>
-INSERT INTO prijave (ime, prezime, godine, pol, ljstatus, datumRodj) VALUES('Pera','Peric','11','ženski','FWB','2018-07-22')

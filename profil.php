@@ -30,10 +30,9 @@
   <body class="text-center">
     
     <main class="form-signin w-100 m-auto">
-      <form>
         
         <h1 class="h3 mb-3 fw-normal">Šta želiš od mene?</h1>
-        <form action="#" method="post" id="profilForm">
+        <form action="kalendar.php" method="post" id="profilForm">        
         <div class="fieldset-1">
             <img src="<?php echo $slika?>" width="200" height="200">
         </div>
@@ -53,16 +52,20 @@
           <div>
             <label for="ljstatus"><?php echo $ljstatus ?></label>
           </div>
-        </div>
-        </form>
-       
-        <a href="kalendar.php"><button class="w-100 btn btn-lg btn-primary" type="submit">Zakaži sastanak</button></a>
-        <button class="w-100 btn btn-lg btn-primary btnIzb " type="submit">Obriši</button>
-        <button class="w-100 btn btn-lg btn-primary" type="submit">Izmeni</button>
+        </div>             
+        <a href="kalendar.php"><button class="w-100 btn btn-lg btn-primary" type="submit">Zakaži sastanak</button></a>                
+        </form>  
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Izmeni</button> 
+          <button class="w-100 btn btn-lg btn-primary" id="btn-obrisi" onclick="obrisi(<?php echo $id?>)">Obriši</button>
+          <div>
+            <input hidden id="ljubavnikId" name="ljubavnikId" value="<?php echo $id?>">
+          </div>        
         <a href="lista.php"><button class="w-100 btn btn-lg btn-primary btnNazad">Nazad</button></a>
-        
-      </form>
+      
     </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="forma.js"></script>
+    <!-- nece da procita skriptu -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
   </body>
 </html>
