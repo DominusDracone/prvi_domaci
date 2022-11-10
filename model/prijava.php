@@ -67,10 +67,11 @@ class Prijava{
         return $conn->query($query);
     }
     
-    public function updatePrijava($id, mysqli $conn)
+    public function updatePrijava(Prijava $prijava, mysqli $conn)
     {
-        $query = "UPDATE prijave set ime = $this->ime, prezime = $this->prezime, godine = $this->godine, pol = $this-$>pol, ljstatus = $this-$>ljstatus, datumRodj = $this-$>rodjendan WHERE id=$id";
+        $query = "UPDATE prijave set ime = '$prijava->ime', prezime = '$prijava->prezime', godine = '$prijava->godine', pol = '$prijava->pol', ljstatus = '$prijava->ljstatus', datumRodj = '$prijava->rodjendan' WHERE id=$prijava->id";
         return $conn->query($query);
+        
     }
 }
 

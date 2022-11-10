@@ -53,3 +53,35 @@ function obrisi($x){
     });
 
 };
+
+$('#izmeniForm').submit(function () {
+    event.preventDefault();
+    console.log("Izmene");
+    const $form = $(this);
+    const $inputs = $form.find('input, button');
+    const serializedData = $form.serialize();
+    console.log(serializedData);
+    $inputs.prop('disabled', true);
+
+    req = $.ajax({
+        url: 'handler/update.php',
+        type:'post',
+        data: serializedData
+    });
+
+    req.done(function (response, textStatus, jqXHR) {
+
+
+        if (response == 'Success') {
+            console.log('Partner je izmenjen');
+            window.location.href = 'lista.php';
+        }
+        else console.log('Partner nije izmenjen ' + response);
+        console.log(response);
+    });
+
+    req.fail(function (jqXHR, textStatus, errorThrown) {
+        console.error('The following error occurred: ' + textStatus, errorThrown);
+    });
+
+});

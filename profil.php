@@ -16,6 +16,7 @@
     $godine = $podaci[0]['godine'];
     $pol = $podaci[0]['pol'];
     $ljstatus = $podaci[0]['ljstatus'];
+    $rodjendan = $podaci[0]['datumRodj'];
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +36,8 @@
       <form>
         
         <h1 class="h3 mb-3 fw-normal">Šta želiš od mene?</h1>
-        <form action="#" method="post" id="profilForm">
+        <form method="post" id="profilForm">
+        
         <div class="fieldset-1">
             <img src="<?php echo $slika?>" width="200" height="200">
         </div>
@@ -55,19 +57,28 @@
           <div>
             <label for="ljstatus"><?php echo $ljstatus ?></label>
           </div>
+          <div>
+            <label for="rodjendan"><?php echo $rodjendan ?></label>
+          </div>
         </div>
         </form>
        
         <a href="kalendar.php"><button class="w-100 btn btn-lg btn-primary" type="submit">Zakaži sastanak</button></a>
-        
-        <button class="w-100 btn btn-lg btn-primary" type="submit">Izmeni</button>
+        <form action="izmena.php" method="post" id="profilIzmenaForm">
+          <input hidden id="ljubId" name="ljubId" value="<?php echo $_POST['ljubavnikId']?>">
+          <button class="w-100 btn btn-lg btn-primary" type="submit">Izmeni</button>
+        </form>
+
         <a href="lista.php"><button class="w-100 btn btn-lg btn-primary btnNazad">Nazad</button></a>
         
       </form>
       <button class="w-100 btn btn-lg btn-primary btnIzb " onclick="obrisi(<?php echo $id?>)">Obriši</button>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    
   </body>
   <!-- bitan komentar -->
+
+  
 </html>
 
