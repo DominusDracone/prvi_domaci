@@ -31,3 +31,25 @@ $('#dodajForm').submit(function(){
     });
 });
 
+function obrisi($x){
+    console.log("Brisanje");
+
+    req = $.ajax({
+        url: 'handler/delete.php',
+        type:'post',
+        data: {'id':$x}
+    });
+
+    req.done(function(res, textStatus, jqXHR){
+        if(res=="Success"){
+           alert('Obrisan partner');
+           console.log('Obrisan');
+           window.location.href = 'lista.php';
+        }else {
+        console.log("Partner nije obrisan "+res);
+        alert("partner nije obrisan ");
+        }
+        console.log(res);
+    });
+
+};

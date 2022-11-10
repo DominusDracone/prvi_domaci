@@ -9,7 +9,7 @@ class Prijava{
     public $rodjendan;
     
     public function __construct($id=null, $ime=null, $prezime=null, $godine=null, $pol=null, $ljstatus=null, $rodjendan=null)
-    {   
+    {   //echo 'OVO';
         $this->id = $id;
         $this->ime = $ime;
         $this->prezime = $prezime;

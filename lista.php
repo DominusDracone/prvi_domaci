@@ -82,7 +82,7 @@ if ($podaci->num_rows == 0 || $podaciS->num_rows == 0) {
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <a href="kalendar.php"><button type="button" class="btn btn-sm btn-outline-secondary">Zakazi sastanak</button></a>
-                  <button type="button" class="btn btn-sm btn-outline-secondary" id="btn-obrisi1">Ukloni osobu</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Ukloni osobu</button>
                 </div>
                 <small class="text-muted"></small>
               </div>
@@ -104,8 +104,6 @@ if ($podaci->num_rows == 0 || $podaciS->num_rows == 0) {
 
 </main>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="main.js"></script>
     <script src="/docs/5.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
   </body>
