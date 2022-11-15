@@ -63,12 +63,10 @@ CREATE TABLE `slike` (
   `imeslike` VARCHAR(255) NOT NULL
 ) ENGINE=INNODB DEFAULT CHARSET=utf8mb4;
 
-ALTER TABLE `slike`
+  ALTER TABLE `slike`
   ADD PRIMARY KEY (`id`);
-
   ALTER TABLE `slike`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
-
   ALTER TABLE `slike`
   ADD FOREIGN KEY (`id`) REFERENCES `prijave`(`id`);
 

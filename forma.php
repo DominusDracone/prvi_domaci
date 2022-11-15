@@ -17,7 +17,7 @@
         <div class="fieldset-1">
         <form method="post" id="dodajForm">
             <label for="Slika">Slika</label>
-            <input type="file" id="avatar" name="avatar" accept="image/jpg">
+            <input type="text" class="form-control" id="slika" placeholder="slika" name="slika">
         </div>
         <div class="form-floating">
           <input type="text" class="form-control" id="ime" placeholder="Ime" name="ime">

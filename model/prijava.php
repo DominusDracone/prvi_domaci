@@ -118,7 +118,7 @@ class PrijavaS{
     
     public static function addSlika(PrijavaS $prijava, mysqli $conn)
     {
-        $query = "INSERT INTO slike(imeSlike) VALUES('$imeSlike->imeSlike')";
+        $query = "INSERT INTO slike(imeSlike) VALUES('$prijava->imeSlike')";
         return $conn->query($query);
     }
 }
