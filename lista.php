@@ -47,7 +47,7 @@ if ($podaci->num_rows == 0 || $podaciS->num_rows == 0) {
         <p class="lead text-muted"> Šta biste želeli danas?</p>
         <p>
           <a href="forma.php" class="btn btn-primary my-2">Dodaj novog partnera</a>
-          <a href="kalendar.php" class="btn btn-secondary my-2">Pogledaj kalendar</a>
+          <a href="kalendarGoogle.php" class="btn btn-secondary my-2">Pogledaj kalendar</a>
         </p>
       </div>
     </div>
@@ -83,7 +83,7 @@ if ($podaci->num_rows == 0 || $podaciS->num_rows == 0) {
               <p class="card-text"><label name = "ljstatus"><?php echo $red['ljstatus']?></label></p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <a href="kalendar.php"><button type="button" class="btn btn-sm btn-outline-secondary">Zakazi sastanak</button></a>
+                  <a href="kalendarGoogle.php"><button type="button" class="btn btn-sm btn-outline-secondary">Zakazi sastanak</button></a>
                   <button type="button" class="btn btn-sm btn-outline-secondary" onclick="obrisi(<?php echo $red['id']?>)">Ukloni osobu</button>
                 </div>
                 <small class="text-muted"></small>

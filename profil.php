@@ -64,7 +64,7 @@
         </div>
         </form>
        
-        <a href="kalendar.php"><button class="w-100 btn btn-lg btn-primary" type="submit">Zakaži sastanak</button></a>
+        <a href="kalendarGoogle.php"><button class="w-100 btn btn-lg btn-primary" type="submit">Zakaži sastanak</button></a>
         <form action="izmena.php" method="post" id="profilIzmenaForm">
           <input hidden id="ljubId" name="ljubId" value="<?php echo $_POST['ljubavnikId']?>">
           <button class="w-100 btn btn-lg btn-primary" type="submit">Izmeni</button>
