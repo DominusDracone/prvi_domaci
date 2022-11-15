@@ -11,7 +11,8 @@ SET time_zone = "+00:00";
 CREATE DATABASE IF NOT EXISTS `prviDomaci` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `prviDomaci`;
 
-
+DROP TABLE IF EXISTS `user`;
+DROP TABLE IF EXISTS `slike`;
 DROP TABLE IF EXISTS `prijave`;
 CREATE TABLE `prijave` (
   `id` int(11) NOT NULL,
@@ -39,7 +40,7 @@ INSERT INTO `prijave` (`id`, `ime`, `prezime`, `godine`, `pol`, `ljstatus`, `dat
 
 
 
-DROP TABLE IF EXISTS `user`;
+
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
@@ -56,14 +57,20 @@ ALTER TABLE `user`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
-DROP TABLE IF EXISTS `slike`;
+
 CREATE TABLE `slike` (
   `id` INT(11) NOT NULL,
   `imeslike` VARCHAR(255) NOT NULL
 ) ENGINE=INNODB DEFAULT CHARSET=utf8mb4;
 
 ALTER TABLE `slike`
+  ADD PRIMARY KEY (`id`);
+
+  ALTER TABLE `slike`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+
+  ALTER TABLE `slike`
+  ADD FOREIGN KEY (`id`) REFERENCES `prijave`(`id`);
 
 INSERT INTO `slike` (`id`, `imeslike`) VALUES
 (1, 'MilicaS'),

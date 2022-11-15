@@ -79,7 +79,7 @@ class PrijavaS{
     public $id;
     public $imeSlike;
 
-    public function __construct($id, $imeSlike){
+    public function __construct($id=null, $imeSlike=null){
         $this ->id = $id;
         $this ->imeSlike = $imeSlike;
     }
@@ -116,7 +116,7 @@ class PrijavaS{
         return $conn->query($query);
     }
     
-    public static function addSlike(Prijava $prijava, mysqli $conn)
+    public static function addSlika(PrijavaS $prijava, mysqli $conn)
     {
         $query = "INSERT INTO slike(imeSlike) VALUES('$imeSlike->imeSlike')";
         return $conn->query($query);

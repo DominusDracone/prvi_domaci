@@ -17,18 +17,18 @@
         <div class="fieldset-1">
         <form method="post" id="dodajForm">
             <label for="Slika">Slika</label>
-            <input type="image" src="" alt="Submit" width="48" height="48">
+            <input type="file" id="avatar" name="avatar" accept="image/jpg">
         </div>
         <div class="form-floating">
-          <input type="text" class="form-control" id="ime" placeholder="Ime" name="ime" value="">
+          <input type="text" class="form-control" id="ime" placeholder="Ime" name="ime">
           <label for="Ime">Ime</label>
         </div>
         <div class="form-floating">
-          <input type="text" class="form-control" id="prezime" placeholder="Prezime" name="prezime" value="">
+          <input type="text" class="form-control" id="prezime" placeholder="Prezime" name="prezime">
           <label for="Prezime">Prezime</label>
         </div>
         <div class="form-floating">
-          <input type="number" class="form-control" id="godine" placeholder="Godine" name="godine" value="">
+          <input type="number" class="form-control" id="godine" placeholder="Godine" name="godine">
           <label for="Godine">Godine</label>
         </div>
         

@@ -57,10 +57,11 @@ if ($podaci->num_rows == 0 || $podaciS->num_rows == 0) {
   <?php 
     while ($red = $podaci->fetch_array()) :
       $pom = PrijavaS::getByIdSlike($red['id'], $conn);
+      //print_r($pom);
       // echo $pom['id'];
       //print_r($pom);
       //echo $pom[0]['imeslike']; //ovo izvlaci ime slike
-      $slika = "slikePartnera/{$pom[0]['imeslike']}.jfif";
+      $slika = "slikePartnera/{$pom[0]['imeslike']}.jpg";
       //echo $slika;
   ?>
   
@@ -70,7 +71,7 @@ if ($podaci->num_rows == 0 || $podaciS->num_rows == 0) {
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         <div class="col">
           <div class="card shadow-sm">
-           <button type="submit"> <img src="<?php echo $slika?>"> </img></button>
+           <button type="submit"> <img src="<?php echo $slika?>" width="200" height="200"> </img></button>
 
            <!-- input:hidden -->
            <!-- sacuvala sesiju ID korisnika i na taj nacin pamtis sta je korisnik izabrao -->

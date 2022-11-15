@@ -8,6 +8,7 @@
         $prijava = new Prijava($_POST['idIzmena'], $_POST['imeIzmena'], $_POST['prezimeIzmena'], $_POST['godineIzmena'], $_POST['polIzmena'], $_POST['ljstatusIzmena'], $_POST['rodjendanIzmena']); 
         $odg = Prijava::updatePrijava($prijava, $conn);
     if($odg){
+        echo $odg;
         echo 'Success';
     }else{
         echo $odg;
