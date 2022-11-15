@@ -32,9 +32,9 @@ ALTER TABLE `prijave`
 
 
 INSERT INTO `prijave` (`id`, `ime`, `prezime`, `godine`, `pol`, `ljstatus`, `datumRodj`) VALUES
-(1, 'Milica', 'Perić', '22', 'ženski', 'muž/žena', '2000-12-26'),
-(2, 'Isidora', 'Lazovski', '23', 'ženski', 'ljubavnica', '1999-11-26'),
-(3, 'Marija', 'Nikolin', '20', 'ženski', 'ljubavnica', '2002-12-13');
+(1, 'Milica', 'Perić', '22', 'Žensko', 'muž/žena', '2000-12-26'),
+(2, 'Isidora', 'Lazovski', '23', 'Žensko', 'ljubavnica', '1999-11-26'),
+(3, 'Marija', 'Nikolin', '20', 'Žensko', 'ljubavnica', '2002-12-13');
 
 -- --------------------------------------------------------
 

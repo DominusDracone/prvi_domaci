@@ -36,11 +36,11 @@
             <legend>Pol:</legend>
 
                 <div>
-                    <input type="radio" id="musko" name="pol" value="musko" checked >
+                    <input type="radio" id="musko" name="pol" value="Muško" checked >
                     <label for="huey">Muško</label>
                 </div>
                 <div>
-                    <input type="radio" id="zensko" name="pol" value="zensko" unchecked>
+                    <input type="radio" id="zensko" name="pol" value="Žensko" unchecked>
                     <label for="huey">Žensko</label>
                 </div>
         </fieldset>

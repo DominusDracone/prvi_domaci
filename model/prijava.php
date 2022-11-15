@@ -104,9 +104,9 @@ class PrijavaS{
 
     }
     
-    public function updateSlike($id, mysqli $conn)
+    public function updateSlike(PrijavaS $prijava, mysqli $conn)
     {
-        $query = "UPDATE slike set imeSlike = $this->imeSlike";
+        $query = "UPDATE slike set imeSlike = '$prijava->imeSlike' WHERE id=$prijava->id";
         return $conn->query($query);
     }
 

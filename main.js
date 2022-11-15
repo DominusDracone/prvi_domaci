@@ -69,26 +69,14 @@ $('#izmeniForm').submit(function () {
         data: serializedData
     });
 
-    req.done(function(res, textStatus, jqXHR){
-        if(res=='1Success'){
-            console.log("Partner je izmenjen");
-            location.reload(true);
-        }else console.log("Partner nije izmenjen ");
-        console.log(res);
+    req.done(function (response, textStatus, jqXHR) {
+
+        if (response === "Success") {
+            console.log('Partner je izmenjen');
+        }
+        else console.log('Partner nije izmenjen' + response);
+        console.log(response);
     });
 
-    // req.done(function (response, textStatus, jqXHR) {
-
-    //     if (response === "Success") {
-    //         console.log('Partner je izmenjen');
-    //         window.location.href = 'lista.php';
-    //     }
-    //     else console.log('Partner nije izmenjen' + response);
-    //     console.log(response);
-    // });
-
-    req.fail(function (jqXHR, textStatus, errorThrown) {
-        console.error('The following error occurred: ' + textStatus, errorThrown);
-    });
-
+    window.location.href = 'lista.php';
 });

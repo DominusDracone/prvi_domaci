@@ -3,7 +3,7 @@
   require "dbBroker.php"; 
     $podaci = Prijava::getByIdPrijava($_POST['ljubId'], $conn);
     $pom = PrijavaS::getByIdSlike($_POST['ljubId'], $conn);
-    $slika = "slikePartnera/{$pom[0]['imeslike']}.jfif";
+    $slika = "slikePartnera/{$pom[0]['imeslike']}.jpg";
     $id = $_POST['ljubId'];
     $ime = $podaci[0]['ime'];
     $prezime = $podaci[0]['prezime'];
@@ -28,12 +28,14 @@
     <main class="form-signin w-100 m-auto">
       <!-- <form> -->
         
-        <h1 class="h3 mb-3 fw-normal">Šta bi želeo da promeniš?</h1>
+        <h1 class="h3 mb-3 fw-normal">Šta želite da promenite?</h1>
     
         <div class="fieldset-1">
         <form method="post" id="izmeniForm">
             <label for="Slika">Slika</label>
-            <input type="image" src="<?php echo $slika?>" alt="Submit" width="48" height="48">
+            <input type="image" src="<?php echo $slika?>" alt="Submit" width="100" height="100">
+            <input type="text" class="form-control" id="slikaIzmena" name="sliakIzmena" value="<?php echo $pom[0]['imeslike'];?>">
+            <label for="slika"></label>
         </div>
         <input hidden name="idIzmena" value="<?php echo $id;?>">
         <div class="form-floating">          
@@ -55,11 +57,11 @@
                   <label for="pol"><?php echo $pol ?></label>
                 </div>             
                 <div>
-                    <input type="radio" id="muskoIzmena" name="polIzmena" value="musko" checked>
+                    <input type="radio" id="muskoIzmena" name="polIzmena" value="Muško" checked>
                     <label for="huey">Muško</label>
                 </div>
                 <div>
-                    <input type="radio" id="zenskoIzmena" name="polIzmena" value="zensko">
+                    <input type="radio" id="zenskoIzmena" name="polIzmena" value="Žensko">
                     <label for="huey">Žensko</label>
                 </div>
         </fieldset>
